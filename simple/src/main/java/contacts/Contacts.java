@@ -161,10 +161,10 @@ public class Contacts {
 		}
 		int j=1;
 		for(StoreAndManage i:list) {
-			StoreAndManage.p.println("Person "+j+" Details");
-			StoreAndManage.p.println("Name "+i.name);
-			StoreAndManage.p.println("Number "+i.number);
-			StoreAndManage.p.println("Email Address "+i.email);
+			StoreAndManage.p.println("Person "+j+" Details !!");
+			StoreAndManage.p.println("Name = "+i.name);
+			StoreAndManage.p.println("Number = "+i.number);
+			StoreAndManage.p.println("Email Address = "+i.email);
 			j++;
 			StoreAndManage.p.println("\n");
 		}
