@@ -38,32 +38,11 @@ public class Contacts {
 		list.add(new StoreAndManage(name,number,email));
 		count++;
 	}
-	static void removeByName(String n) {
-		for(StoreAndManage i: list) {
-			if(i.name == n) {
-				list.remove(i);
-			}
-		}
-	}
-    static void removeByNumber(long n) {
-    	for(StoreAndManage i: list) {
-			if(i.number == n) {
-				list.remove(i);
-			}
-		}
-	}
-    static void removeByEmail(String n) {
-    	for(StoreAndManage i: list) {
-			if(i.email == n) {
-				list.remove(i);
-			}
-		}
-	}
     static void searchByName(String n) {
     	c =0;
     	b = true;
     	for(StoreAndManage i: list) {
-			if(i.name == n) {
+			if(i.name.equals(n)) {
 				StoreAndManage.p.println("The index of the searched person is "+c);
 				StoreAndManage.p.println("Number and Email are "+i.number+" and "+i.email);
 				b = false;
@@ -93,7 +72,7 @@ public class Contacts {
     	c =0;
     	b = true;
     	for(StoreAndManage i: list) {
-			if(i.email == n) {
+			if(i.email.equals(n)) {
 				StoreAndManage.p.println("The index of the searched person is "+c);
 				StoreAndManage.p.println("Name and Number are "+i.name+" and "+i.number);
 				b = false;
@@ -105,7 +84,7 @@ public class Contacts {
     	}
     }
     static void store() {
-    	StoreAndManage.p.println("Enter the Choice You Want !!\n1. Add Details \n2. Delete by Name \n3. Delete By Number\n4. Delete By Email\n5. Search By Name\n6. Search By Number\n7. Search By Email" );
+    	StoreAndManage.p.println("Enter the Choice like 1,2,3..7 What You Want !!\n1. Add Details \n2. Delete by Name \n3. Delete By Number\n4. Delete By Email\n5. Search By Name\n6. Search By Number\n7. Search By Email" );
 		choice = s1.nextInt();
 		switch(choice) {
 		      case 1:
@@ -114,17 +93,44 @@ public class Contacts {
 		      case 2:
 		    	  StoreAndManage.p.println("Enter the Name");
 		    	  String n = s.nextLine();
-		    	  removeByName(n);
+		    	  b = true;
+		  		  for(int i=0;i<list.size();i++) {
+		    			if(list.get(i).name.equals(n)) {
+		    				list.remove(i);
+		    				b = false;
+		    			}
+		    	  }
+		  		  if(b) {
+		      	  StoreAndManage.p.println("There is no Details of the person");
+		      	  }
 		    	  break;
 		      case 3:
 		    	  StoreAndManage.p.println("Enter the Number");
 		    	  long n1 = s1.nextInt();
-		    	  removeByNumber(n1);
+		    	  b = true;
+		      	  for(int i=0;i<list.size();i++) {
+		    			if(list.get(i).number == n1) {
+		    				list.remove(i);
+		    				b = false;
+		    			}
+		    	  }
+		      	  if(b) {
+		      	  StoreAndManage.p.println("There is no Details of the person");
+		      	  }
 		    	  break;
 		      case 4:
 		    	  StoreAndManage.p.println("Enter the Email Address");
 		    	  String n3 = s2.nextLine();
-		    	  removeByEmail(n3);
+		    	  b = true;
+		      	  for(int i=0;i<list.size();i++) {
+		    			if(list.get(i).email.equals(n3)) {
+		    				list.remove(i);
+		    				b = false;
+		    			}
+		    		 }
+		      	  if(b) {
+		      		StoreAndManage.p.println("There is no Details of the person");
+		      	  }
 		    	  break;
 		      case 5:
 		    	  StoreAndManage.p.println("Enter the Name");
