@@ -38,54 +38,46 @@ public class Contacts {
 		list.add(new StoreAndManage(name,number,email));
 		count++;
 	}
-    static void searchByName(String n) {
+    static StoreAndManage searchByName(String n) {
     	c =0;
     	b = true;
     	for(StoreAndManage i: list) {
 			if(i.name.equals(n)) {
-				StoreAndManage.p.println("Index is = "+c);
-				StoreAndManage.p.println("Number and Email are "+i.number+" and "+i.email);
 				b = false;
+				return i;
 			}
 			c++;
 		}
-    	if(b) {
-    		StoreAndManage.p.println("There is no name of the person");
-    	}
+    	return null;
     }
-    static void searchByNumber(long n) {
+    static StoreAndManage searchByNumber(long n) {
     	c =0;
     	b = true;
     	for(StoreAndManage i: list) {
 			if(i.number == n) {
-				StoreAndManage.p.println("Index is = "+c);
-				StoreAndManage.p.println("Name and Email are "+i.name+" and "+i.email);
 				b = false;
+				return i;
 			}
 			c++;
 		}
-    	if(b) {
-    		StoreAndManage.p.println("There is no number of the person");
-    	}
+    	return null;
     }
-    static void searchByEmail(String n) {
+    static StoreAndManage searchByEmail(String n) {
     	c =0;
     	b = true;
     	for(StoreAndManage i: list) {
 			if(i.email.equals(n)) {
-				StoreAndManage.p.println("Index is = "+c);
-				StoreAndManage.p.println("Name and Number are "+i.name+" and "+i.number);
 				b = false;
+				return i;
 			}
 			c++;
 		}
-    	if(b) {
-    		StoreAndManage.p.println("There is no email address of the person");
-    	}
+    	return null;
     }
     static void store() {
     	StoreAndManage.p.println("Enter the Choice like 1,2,3..7 What You Want !!\n1. Add Details \n2. Delete by Name \n3. Delete By Number\n4. Delete By Email\n5. Search By Name\n6. Search By Number\n7. Search By Email" );
 		choice = s1.nextInt();
+		StoreAndManage k = null;
 		switch(choice) {
 		      case 1:
 		    	  add();
@@ -100,9 +92,6 @@ public class Contacts {
 		    				b = false;
 		    			}
 		    	  }
-		  		  if(b) {
-		      	  StoreAndManage.p.println("There is no Name of the person");
-		      	  }
 		    	  break;
 		      case 3:
 		    	  StoreAndManage.p.println("Enter the Number");
@@ -114,10 +103,7 @@ public class Contacts {
 		    				b = false;
 		    			}
 		    	  }
-		      	  if(b) {
-		      	  StoreAndManage.p.println("There is no Number of the person");
-		      	  }
-		    	  break;
+		      	  break;
 		      case 4:
 		    	  StoreAndManage.p.println("Enter the Email Address");
 		    	  String n3 = s2.nextLine();
@@ -127,30 +113,36 @@ public class Contacts {
 		    				list.remove(i);
 		    				b = false;
 		    			}
-		    		 }
-		      	  if(b) {
-		      		StoreAndManage.p.println("There is no Email Address of the person");
 		      	  }
 		    	  break;
 		      case 5:
 		    	  StoreAndManage.p.println("Enter the Name");
 		    	  String n4 = s.nextLine();
-		    	  searchByName(n4);
+		    	  k = searchByName(n4);
 		    	  break;
 		      case 6:
 		    	  StoreAndManage.p.println("Enter the Number");
 		    	  long n5 = s1.nextInt();
-		    	  searchByNumber(n5);
+		    	  k = searchByNumber(n5);
 		    	  break;
 		      case 7:
 		    	  StoreAndManage.p.println("Enter the Email Adress");
 		    	  String n6 = s2.nextLine();
-		    	  searchByEmail(n6);
+		    	  k = searchByEmail(n6);
 		    	  break;
 		      default:
 		    	  StoreAndManage.p.println("Enter the Correct Choice !!");
 		    	  break;
 		    	 
+		}
+		if(b && (choice>=2 &&choice<=7)) {
+	      	  StoreAndManage.p.println("There is no Details of the person");
+	    }
+		else if(b==false && choice>=5 &&choice<=7) {
+			StoreAndManage.p.println("The index of the searched person is "+c);
+			StoreAndManage.p.println("Name = "+k.name);
+			StoreAndManage.p.println("Number = "+k.number);
+			StoreAndManage.p.println("Email Address = "+k.email);
 		}
     }
 	public static void main(String[] arg) {
