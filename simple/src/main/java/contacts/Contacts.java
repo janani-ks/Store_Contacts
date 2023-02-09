@@ -25,8 +25,8 @@ class LinkedList{
 		}
 	}
 	
-	public Node root = null;
-	public Node tail = null;
+	public static Node root = null;
+	public static Node tail = null;
 	public void addObject(Details d) {
 		Node newnode = new Node(d);
 		if(root == null) {
@@ -66,7 +66,7 @@ class LinkedList{
 		if(root == null) {
 			return false;
 		}
-	    else if(root.data.number == n) {
+	    else if(root.data.number.equals(n)) {
 	    	root = root.next;
 	    	return false;
 	    }
