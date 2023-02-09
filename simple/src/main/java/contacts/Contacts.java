@@ -50,7 +50,7 @@ public class Contacts {
 			c++;
 		}
     	if(b) {
-    		StoreAndManage.p.println("There is no Details of the person");
+    		StoreAndManage.p.println("There is no name of the person");
     	}
     }
     static void searchByNumber(long n) {
@@ -65,7 +65,7 @@ public class Contacts {
 			c++;
 		}
     	if(b) {
-    		StoreAndManage.p.println("There is no Details of the person");
+    		StoreAndManage.p.println("There is no number of the person");
     	}
     }
     static void searchByEmail(String n) {
@@ -80,7 +80,7 @@ public class Contacts {
 			c++;
 		}
     	if(b) {
-    		StoreAndManage.p.println("There is no Details of the person");
+    		StoreAndManage.p.println("There is no email address of the person");
     	}
     }
     static void store() {
@@ -101,7 +101,7 @@ public class Contacts {
 		    			}
 		    	  }
 		  		  if(b) {
-		      	  StoreAndManage.p.println("There is no Details of the person");
+		      	  StoreAndManage.p.println("There is no Name of the person");
 		      	  }
 		    	  break;
 		      case 3:
@@ -115,7 +115,7 @@ public class Contacts {
 		    			}
 		    	  }
 		      	  if(b) {
-		      	  StoreAndManage.p.println("There is no Details of the person");
+		      	  StoreAndManage.p.println("There is no Number of the person");
 		      	  }
 		    	  break;
 		      case 4:
@@ -129,7 +129,7 @@ public class Contacts {
 		    			}
 		    		 }
 		      	  if(b) {
-		      		StoreAndManage.p.println("There is no Details of the person");
+		      		StoreAndManage.p.println("There is no Email Address of the person");
 		      	  }
 		    	  break;
 		      case 5:
