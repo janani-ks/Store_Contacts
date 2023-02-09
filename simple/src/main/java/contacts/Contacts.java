@@ -138,7 +138,7 @@ public class Contacts {
 		if(b && (choice>=2 &&choice<=7)) {
 	      	  StoreAndManage.p.println("There is no Details of the person");
 	    }
-		else if(b==false && choice>=5 &&choice<=7) {
+		else if(b && choice>=5 &&choice<=7) {
 			StoreAndManage.p.println("The index of the searched person is "+c);
 			StoreAndManage.p.println("Name = "+k.name);
 			StoreAndManage.p.println("Number = "+k.number);
