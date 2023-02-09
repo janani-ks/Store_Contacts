@@ -43,7 +43,7 @@ public class Contacts {
     	b = true;
     	for(StoreAndManage i: list) {
 			if(i.name.equals(n)) {
-				StoreAndManage.p.println("The index of the searched person is "+c);
+				StoreAndManage.p.println("Index is = "+c);
 				StoreAndManage.p.println("Number and Email are "+i.number+" and "+i.email);
 				b = false;
 			}
@@ -58,7 +58,7 @@ public class Contacts {
     	b = true;
     	for(StoreAndManage i: list) {
 			if(i.number == n) {
-				StoreAndManage.p.println("The index of the searched person is "+c);
+				StoreAndManage.p.println("Index is = "+c);
 				StoreAndManage.p.println("Name and Email are "+i.name+" and "+i.email);
 				b = false;
 			}
@@ -73,7 +73,7 @@ public class Contacts {
     	b = true;
     	for(StoreAndManage i: list) {
 			if(i.email.equals(n)) {
-				StoreAndManage.p.println("The index of the searched person is "+c);
+				StoreAndManage.p.println("Index is = "+c);
 				StoreAndManage.p.println("Name and Number are "+i.name+" and "+i.number);
 				b = false;
 			}
