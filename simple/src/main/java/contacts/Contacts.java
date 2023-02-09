@@ -15,7 +15,7 @@ class Details{
 	}
 }
 class LinkedList{
-	public int c;
+	int c;
 	class Node{
 		Details data;
 		Node next;
