@@ -19,7 +19,7 @@ public class Contacts {
 		StoreAndManage.p.println("Enter Person "+count+" Details!!");
 		StoreAndManage.p.print("Enter Name = ");
 		name = s.nextLine();
-		while(numstore()==false) ;
+		while(numstore()) ;
 		StoreAndManage.p.print("Enter Email Address = ");
 		email = s2.nextLine();	
 		list.add(new StoreAndManage(name,number1,email));
@@ -68,14 +68,14 @@ public class Contacts {
     	long n1 = scan.nextLong();
     	if(n1<=9999999999l && n1>999999999) {
     		number1 = n1;
-        	return true;
+        	return false;
     	}
     	else {
-    	return false;
+    	return true;
     	}
     	}
     	catch(Exception e) {
-    	return false;
+    	return true;
     	}
     }
     static void store() {
@@ -98,7 +98,7 @@ public class Contacts {
 		    	  }
 		    	  break;
 		      case 3:
-		    	  while(numstore()==false) ;
+		    	  while(numstore()) ;
 		    	  b = true;
 		      	  for(int i=0;i<list.size();i++) {
 		    			if(list.get(i).number == number1) {
@@ -124,7 +124,7 @@ public class Contacts {
 		    	  k = searchByName(n4);
 		    	  break;
 		      case 6:
-		    	  while(numstore()==false) ;
+		    	  while(numstore()) ;
 		    	  k = searchByNumber(number1);
 		    	  break;
 		      case 7:
@@ -140,7 +140,7 @@ public class Contacts {
 		if(b && (choice>=2 &&choice<=7)) {
 	      	  StoreAndManage.p.println("There is no Details of the person");
 	    }
-		else if(b==false && choice>=5 &&choice<=7) {
+		else if(choice>=5 &&choice<=7) {
 			StoreAndManage.p.println("The index of the searched person is "+c);
 			StoreAndManage.p.println("Name = "+k.name);
 			StoreAndManage.p.println("Number = "+k.number);
